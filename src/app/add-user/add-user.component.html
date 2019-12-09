@@ -1,0 +1,77 @@
+<div class="container space-header">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+        <h3>Add User</h3>
+        <form [formGroup]="addUserForm" (ngSubmit)="onSubmit(addUserForm.value)">
+            <div class="form-group">
+                <label for="email">
+                Email : 
+                </label>
+                <input type="email" formControlName="email" class="form-control">
+                <span *ngIf="addUserForm.controls['email'].invalid && (addUserForm.controls['email'].dirty || addUserForm.controls['email'].touched)">
+                    Please enter the correct email, this email not valid.
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="password">
+                Password : 
+                </label>
+                <input type="password" formControlName="password" class="form-control">
+                <span *ngIf="addUserForm.controls['password'].invalid && (addUserForm.controls['password'].dirty || addUserForm.controls['password'].touched)">
+                    Please fill password field, field is invalid.
+                </span>
+            </div>
+            <div class="form-group">
+                <label>
+                Role : 
+                </label>
+                <div>
+                    <label>
+                    <input type="radio" value="Developer" formControlName="role">
+                    <span>&nbsp;&nbsp;Developer&nbsp;&nbsp;</span>
+                    </label>
+                    <label>
+                    <input type="radio" value="Tester" formControlName="role">
+                    <span>&nbsp;&nbsp;Tester&nbsp;&nbsp;</span>
+                    </label>
+                    <!--
+                    <label>
+                    <input type="radio" value="BA" formControlName="role">
+                    <span>&nbsp;&nbsp;BA&nbsp;&nbsp;</span>
+                    </label>
+                    -->
+                    <label>
+                    <input type="radio" value="Admin" formControlName="role">
+                    <span>&nbsp;&nbsp;Admin&nbsp;&nbsp;</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fullname">
+                Fullname : 
+                </label>
+                <input type="text" formControlName="fullname" class="form-control">
+                <span *ngIf="addUserForm.controls['fullname'].invalid && (addUserForm.controls['fullname'].dirty || addUserForm.controls['fullname'].touched)">
+                    Please fill fullname field, field is invalid.
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="description">
+                Description : 
+                </label>
+                <textarea class="form-control" formControlName="description" descriptionrows="3"></textarea>
+            </div>
+            <button class="button" type="submit" class="btn btn-default">Sign up</button>
+            <button class="button" class="btn btn-default" (click)="resetForm()">Reset</button>
+            <button class="button" class="btn btn-default" [routerLink]="['../manage-user']">Back</button>
+            <div>
+                <span *ngIf="addUserForm.invalid">
+                Please fill all field.
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-4">
+    </div>
+</div>

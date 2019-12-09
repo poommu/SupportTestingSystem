@@ -1,0 +1,19 @@
+<div class="container space-header">
+    <h3>Requirement Traceablity Matrix</h3>
+    <table class="table table-bordered setFontSize">
+        <thead>
+            <tr class="setheader">
+                <th>Business Requirement ID</th>
+                <th>Functional Requirement ID</th> 
+                <th>Test Case ID</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detailRTM of mergeData">
+                <td>BR_000{{detailRTM.BRID}}</td>
+                <td>FR_000{{detailRTM.FRID}}</td>
+                <td>TC_000{{detailRTM.TCID}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+<div class="container space-header">
+    <h3>List User</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width:300px;">User ID</th>
+                <th>Fullname</th>
+                <th>Role</th> 
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detailUser of detailUsers">
+                <td>{{detailUser.idU}}</td>    
+                <td>{{detailUser.UName}}</td>
+                <td>{{detailUser.UPosition}}</td>
+                <td>{{detailUser.UDes}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a [routerLink]="['../add-user']">+ Add user</a>
+</div>
